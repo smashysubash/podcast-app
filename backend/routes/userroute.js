@@ -10,10 +10,10 @@ const signup = async (req,res)=>{
 
     try {
         const dataToSave = await data.save();
-        res.status(200).json(dataToSave)
+        res.status(200).json({"success":true,"error":null})
     }
     catch (error) {
-        res.status(400).json({message: error.message})
+        res.status(400).json({"success":false,"error": error.message})
     }
 }
 
