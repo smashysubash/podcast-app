@@ -17,4 +17,4 @@ const dataSchema = new mongoose.Schema({
 },
 { timestamps: true })
 
-module.exports = mongoose.model('user', dataSchema)
+module.exports = mongoose.model('admin', dataSchema)
