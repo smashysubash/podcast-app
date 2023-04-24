@@ -45,15 +45,16 @@ app.post('/login', userroutes.login)
 app.post('/adminsignup',adminroutes.signup)
 app.post('/adminlogin', adminroutes.login)
 app.post('/addpodcast',upload.fields([{ name: 'image', maxCount: 1 }, { name: 'content', maxCount: 1 }]),podcastroute.addpodcast)
-app.get('/getpodcast',jwtMW,podcastroute.podcastbyid)
-app.get('/searchpodcast',jwtMW,podcastroute.podcastsearchbyname)
+app.get('/getpodcast/:id',jwtMW,podcastroute.podcastbyid)
+app.get('/searchpodcast/:name',jwtMW,podcastroute.podcastsearchbyname)
 app.get('/popularpodcasts',jwtMW,podcastroute.popularpodcast)
+app.get('/getpodcasts',jwtMW,podcastroute.getpodcasts)
 app.get('/', jwtMW , (req, res) => {
   console.log("Web Token Checked.")
   res.send('You are authenticated'); 
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`App running on port ${port}.`)
 })
 process.on("unhandledRejection", err => {
