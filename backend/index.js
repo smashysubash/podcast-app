@@ -54,7 +54,7 @@ app.get('/', jwtMW , (req, res) => {
   res.send('You are authenticated'); 
 });
 
-const server = app.listen(port, () => {
+const server = app.listen(port,"https://podcast-app-production.up.railway.app/" , () => {
     console.log(`App running on port ${port}.`)
 })
 process.on("unhandledRejection", err => {
