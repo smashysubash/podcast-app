@@ -1,0 +1,28 @@
+
+
+GET http://localhost:3001/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg2Mjg2MjE0LCJleHAiOjE2ODY0MTU4MTR9.wTA2F9OqxSqhyMxXnBeBSN9TZGQN7eVp7x2b7-Jo0KQ
+###
+
+POST http://localhost:3001/login 
+Content-Type: application/json
+
+{
+    "email":"2012099@nec.edu.in",
+    "password":"123"
+}
+
+###
+
+GET http://localhost:3001/popularpodcasts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg2Mjg2MjE0LCJleHAiOjE2ODY0MTU4MTR9.wTA2F9OqxSqhyMxXnBeBSN9TZGQN7eVp7x2b7-Jo0KQ
+###
+
+GET http://localhost:3001/searchpodcast/one
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg2Mjg2MjE0LCJleHAiOjE2ODY0MTU4MTR9.wTA2F9OqxSqhyMxXnBeBSN9TZGQN7eVp7x2b7-Jo0KQ
+###
+
+GET http://localhost:3001/getpodcast/6446727f44971156a510fd31
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg2Mjg2MjE0LCJleHAiOjE2ODY0MTU4MTR9.wTA2F9OqxSqhyMxXnBeBSN9TZGQN7eVp7x2b7-Jo0KQ
+###
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg2Mjg2MjE0LCJleHAiOjE2ODY0MTU4MTR9.wTA2F9OqxSqhyMxXnBeBSN9TZGQN7eVp7x2b7-Jo0KQ"
