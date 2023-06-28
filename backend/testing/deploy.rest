@@ -1,0 +1,28 @@
+
+
+GET https://ill-jade-eel-yoke.cyclic.app/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTFAbmVjLmVkdS5pbiIsImlhdCI6MTY4NjgxMzE2NiwiZXhwIjoxNjg2OTQyNzY2fQ.9_1k6ogZ8NiIGZxlHjyQflNvjVaKFyjM4mIwYCiNVDM
+###
+
+POST https://ill-jade-eel-yoke.cyclic.app/login 
+Content-Type: application/json
+
+{
+    "email":"2012091@nec.edu.in",
+    "password":"12345678"
+}
+
+###
+
+GET https://ill-jade-eel-yoke.cyclic.app/popularpodcasts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsImlhdCI6MTY4NjY0ODEzNywiZXhwIjoxNjg2Nzc3NzM3fQ.baUALgaMurvKE3Due87ZV4ce5xSQqSfJE2pmUPypAuk
+###
+
+GET https://ill-jade-eel-yoke.cyclic.app/searchpodcast/one
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsImlhdCI6MTY4NjY0ODEzNywiZXhwIjoxNjg2Nzc3NzM3fQ.baUALgaMurvKE3Due87ZV4ce5xSQqSfJE2pmUPypAuk
+###
+
+GET https://ill-jade-eel-yoke.cyclic.app/getpodcast/6446727f44971156a510fd31
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsImlhdCI6MTY4NjY0ODEzNywiZXhwIjoxNjg2Nzc3NzM3fQ.baUALgaMurvKE3Due87ZV4ce5xSQqSfJE2pmUPypAuk
+###
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjIwMTIwOTlAbmVjLmVkdS5pbiIsImlhdCI6MTY4NjY0ODEzNywiZXhwIjoxNjg2Nzc3NzM3fQ.baUALgaMurvKE3Due87ZV4ce5xSQqSfJE2pmUPypAuk"
