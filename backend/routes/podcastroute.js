@@ -29,7 +29,6 @@ const podcastbyid = async (req,res)=>{
     const id = req.params.id;
     try{
         const data = await Model.findById(id)
-        const v = data.viewcount+1
         Model.findByIdAndUpdate({_id : id},{ $inc: { viewcount: 1 } }, { new: true }) 
         .then(updatedPost => {
           })
@@ -43,7 +42,7 @@ const podcastbyid = async (req,res)=>{
 }
 
 const podcastsearchbyname = async (req,res)=>{
-    const name = '/'+req.params.name+'/';
+    const name = req.params.name;
     try{
         const data = await Model.find({name: name},'name category type speaker image')
         res.status(200).json(data)

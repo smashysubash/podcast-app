@@ -24,7 +24,7 @@ const login = async (req,res)=>{
             res.status(401).json({"error":"user not found"})
         }else{
             if(req.body.password==data.password){
-                let token = jwt.sign({ email: req.body.email }, 'keyboard cat 4 ever', { expiresIn: 129600 }); // Signing the token
+                let token = jwt.sign({ email: req.body.email, role:'admin' }, 'keyboard cat 4 ever', { expiresIn: 129600 }); // Signing the token
                 res.json({
                   error: null,
                   token

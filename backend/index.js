@@ -26,7 +26,7 @@ database.once('connected', () => {
 const jwtMW = exjwt({
     secret: 'keyboard cat 4 ever',
     algorithms: ["HS256"]
-  });
+});
 
 app.use(bodyParser.json())
 app.use(
@@ -47,11 +47,15 @@ app.post('/adminlogin', adminroutes.login)
 app.post('/addpodcast',upload.fields([{ name: 'image', maxCount: 1 }, { name: 'content', maxCount: 1 }]),podcastroute.addpodcast)
 app.get('/getpodcast/:id',jwtMW,podcastroute.podcastbyid)
 app.get('/searchpodcast/:name',jwtMW,podcastroute.podcastsearchbyname)
-app.get('/popularpodcasts',jwtMW,podcastroute.popularpodcast)
-app.get('/getpodcasts',jwtMW,podcastroute.getpodcasts)
+app.get('/popularpodcasts',jwtMW ,podcastroute.popularpodcast)
+app.get('/getpodcasts',jwtMW ,podcastroute.getpodcasts)
 app.get('/', jwtMW , (req, res) => {
-  console.log("Web Token Checked.")
-  res.send('You are authenticated'); 
+  try{
+    console.log("Web Token Checked.")
+    res.send('You are authenticated'); 
+  }catch(err){
+    res.status(400).json({"error":err});
+  }
 });
 
 const server = app.listen(port, () => {
