@@ -1,39 +1,26 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({setToken}) => {
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
     console.log(email+" "+password)
     try {
-      // Perform login API call
-      const response = await fetch('http://localhost:3001/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
 
-      if (response.ok) {
-        // Successful login
-        const { token } = await response.json();
-        localStorage.setItem('usertoken', token); // Store the JWT token in local storage or session storage
-        alert('Login successful!');
-      } else {
-        // Failed login
-        const errorData = await response.json();
-        alert(errorData.error);
-      }
-
-      // Clear input fields
+      const response = await axios.post('http://localhost:3001/login', { email, password });
+        const { token } = response.data;
+        localStorage.setItem('usertoken', token);
+        setToken(token);
+        navigate("/home")
       setemail('');
       setPassword('');
     } catch (error) {
       console.error('Error during login:', error);
-      alert('An error occurred during login');
+      alert('Invalid username or password');
     }
   };
 
