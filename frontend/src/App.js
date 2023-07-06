@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Login from './components/login';
 import Home from './components/home';
 import ProtectedRoute from './components/protectedroute';
+import Headbar from './components/headbar'
+
 
 const App = () => {
   const [token, setToken] = useState('');
@@ -25,8 +27,12 @@ const App = () => {
           exact
           path="/login"
           element={
-            <Login setToken={setToken}  />
+            <Login setToken={setToken} />
           }
+          />
+        <Route
+          path="/"
+          element={<Headbar/>}
         />
         <Route
           path="/home"
@@ -34,8 +40,8 @@ const App = () => {
           <ProtectedRoute  Component={Home}
             token={token}
             logout={logout}
-          />}
-        />
+            />}
+            />
       </Routes>
     </Router>
   );
